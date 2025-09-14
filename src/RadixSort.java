@@ -23,7 +23,7 @@ public class RadixSort {
             }
             else break;
         }
-        System.out.println("Digits: " + digits);
+        System.out.println("Max digits: " + digits);
 
         //Convert Integer array to string array
         for(int i = 0; i<integers.length; i++){

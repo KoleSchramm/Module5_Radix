@@ -30,14 +30,14 @@ public class RadixSort {
             strings[i] = integers[i].toString();
         }
 
-        //Add 0s to strings to match number of digits
+        //Add 0s to strings to match the number of characters for each string
         for(int i = 0; i<strings.length; i++){
             while(strings[i].length()<digits){
                 strings[i] = "0" + strings[i];
             }
         }
 
-        //Sort string array
+        //Sort string array using counting sort for each character
         for(int i = digits - 1; i>=0; i--){
             for(int j = 0; j<10; j++){
                 for(int k = 0; k < strings.length; k++){

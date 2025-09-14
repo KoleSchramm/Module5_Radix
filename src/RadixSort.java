@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class RadixSort {
     public void sort(Integer[] integers){
         String[] strings = new String[integers.length];
@@ -23,7 +25,7 @@ public class RadixSort {
         }
         System.out.println("Digits: " + digits);
 
-        //Convert int array to string array
+        //Convert Integer array to string array
         for(int i = 0; i<integers.length; i++){
             strings[i] = integers[i].toString();
         }
@@ -31,11 +33,11 @@ public class RadixSort {
         //Add 0s to strings to match number of digits
         for(int i = 0; i<strings.length; i++){
             while(strings[i].length()<digits){
-                strings[i] = strings[i]+"0";
+                strings[i] = "0" + strings[i];
             }
         }
 
-        //Sort
+        //Sort string array
         for(int i = digits - 1; i>=0; i--){
             for(int j = 0; j<10; j++){
                 for(int k = 0; k < strings.length; k++){
@@ -50,6 +52,8 @@ public class RadixSort {
             }
             count = 0;
         }
+
+        //Convert String array to Integer array
         for(int j = 0; j< strings.length; j++){
             integers[j] = Integer.parseInt(strings[j]);
         }
